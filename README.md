@@ -22,6 +22,6 @@
 
 ### ✔ Status
 
-<h4>Building!</h4>
+<h4>Finished!</h4>
 
 <footer>&copy; NT Developer</footer>

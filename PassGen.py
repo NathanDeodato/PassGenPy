@@ -1,5 +1,7 @@
+from datetime import time
 import PySimpleGUI as sg
 from PySimpleGUI.PySimpleGUI import Spin, Window
+
 
 def winPass():
     sg.theme("Python")
@@ -13,7 +15,7 @@ def winPass():
 
         #[sg.Text(" " * 22), sg.Text("-- Caracters --")],
         [sg.Text(" " * 28), sg.Spin((spin), initial_value=1, key="spin", size=(3, 0))],
-        [sg.Checkbox("abcd", ), sg.Checkbox("ABCD"), sg.Checkbox("1234"), sg.Checkbox("!@#$%&*")],
+        [sg.Checkbox("abcd", key="char1"), sg.Checkbox("ABCD", key="char2"), sg.Checkbox("1234", key="char3"), sg.Checkbox("!@#$%&*", key="char4")],
 
         [sg.Text("-" * 70)],
 
@@ -33,5 +35,57 @@ while True:
     if event == sg.WINDOW_CLOSED:
         break
 
+    # Info Password
+    password = ""
+    lenpassword = int(values["spin"])
+
+    char1 = str(values["char1"])
+    char1_list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+    char2 = str(values["char2"])
+    char2_list = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+    char3 = str(values["char3"])
+    char3_list = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+    char4 = str(values["char4"])
+    char4_list = ["!", "@", "#", "$", "%", "&", "*"]
+
+    contador_caracteres = 0
+    if char1 == "True":
+        contador_caracteres+=1
+    if char2 == "True":
+        contador_caracteres+=1
+    if char3 == "True":
+        contador_caracteres+=1
+    if char4 == "True":
+        contador_caracteres+=1
+
+    passlen = lenpassword / contador_caracteres
+
+    def GenPass(password, list1, list2, list3, list4):
+        from random import choice
+
+
+        for x in range(0, int(passlen)):
+            if char1 == "True":
+                password += choice(list1)
+            if char2 == "True":
+                password += choice(list2)
+            if char3 == "True":
+                password += choice(list3)
+            if char4 == "True":
+                password += choice(list4)
+
+        lenpass = len(password)
+
+
+        def PrintPass():
+            print(f"Password: → {password} ←")
+
+        
+        return PrintPass()
+    
+
     if event == "Gen":
-        pass
+        GenPass(password, char1_list, char2_list, char3_list, char4_list)

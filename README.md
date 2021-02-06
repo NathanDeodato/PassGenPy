@@ -3,7 +3,7 @@
 ## 🗂 Project description
 
 <p>
-	Descrição do projeto
+	This software is a password generator, in which you choose the types of characters, and the length of the password.
 </p>
 
 <br>

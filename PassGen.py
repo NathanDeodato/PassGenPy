@@ -1,6 +1,5 @@
-from datetime import time
 import PySimpleGUI as sg
-from PySimpleGUI.PySimpleGUI import Spin, Window
+from PySimpleGUI.PySimpleGUI import Print, Spin, Window
 
 
 def winPass():
@@ -13,7 +12,6 @@ def winPass():
         
         [sg.Text("-" * 70)],
 
-        #[sg.Text(" " * 22), sg.Text("-- Caracters --")],
         [sg.Text(" " * 28), sg.Spin((spin), initial_value=1, key="spin", size=(3, 0))],
         [sg.Checkbox("abcd", key="char1"), sg.Checkbox("ABCD", key="char2"), sg.Checkbox("1234", key="char3"), sg.Checkbox("!@#$%&*", key="char4")],
 
@@ -64,6 +62,7 @@ while True:
     passlen = lenpassword / contador_caracteres
 
     def GenPass(password, list1, list2, list3, list4):
+        from time import sleep
         from random import choice
 
 
@@ -81,7 +80,12 @@ while True:
 
 
         def PrintPass():
+            sleep(0.5)
+            print("__ GENERATING __".center(52))
+            sleep(2)
+            
             print(f"Password: → {password} ←")
+            print("")
 
         
         return PrintPass()

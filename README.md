@@ -9,7 +9,11 @@
 <br>
 
 ### 🖼 Image project
-![PassGen-py](/PassGen-py.png)
+#### PassGen-v1
+![PassGen-v1-py](/PassGen-v1-py.png)
+
+#### PassGen-v2
+![PassGen-v2-py](Img/PassGen-v2-py.png)
 
 <br>
 
@@ -38,6 +42,6 @@
 
 ### ✔ Status
 
-<h4>Finished!</h4>
+<h4>Building!</h4>
 
 <footer>&copy; NT Developer</footer>

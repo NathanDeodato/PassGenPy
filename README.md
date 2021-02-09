@@ -10,7 +10,7 @@
 
 ### 🖼 Image project
 #### PassGen-v1
-![PassGen-v1-py](/PassGen-v1-py.png)
+![PassGen-v1-py](Img/PassGen-v1-py.png)
 
 #### PassGen-v2
 ![PassGen-v2-py](Img/PassGen-v2-py.png)
